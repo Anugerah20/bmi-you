@@ -1,4 +1,4 @@
-# is a web of height and weight measurements that can make it easier for you to measure weight and height 
+# BMI YOU makes it easy for you
 
 Feature Web BMI YOU :
 1. Easy to use
