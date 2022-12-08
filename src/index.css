@@ -66,6 +66,10 @@ input {
   color: #FFF;
 }
 
+.title > h3 {
+  color: #FFF;
+}
+
 .img-bmi {
   text-align: center;
 }
