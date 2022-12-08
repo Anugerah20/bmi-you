@@ -25,6 +25,7 @@
 }
 
 .container > .title > h1 {
+  color: #FFF;
   border-bottom: 2px solid #FFF;
   padding-bottom: 7px;
 }
