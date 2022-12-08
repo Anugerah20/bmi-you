@@ -52,8 +52,9 @@ input {
 }
 
 .btn.btn-outline {
-  background: #FFFF;
-  color: #000;
+  background: #263159;
+  border: none;
+  color: #FFF;
 }
 
 .title {
