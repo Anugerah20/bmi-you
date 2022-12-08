@@ -49,11 +49,10 @@ input {
   border-radius: 8px;
   color: #FFF;
   background: #000;
-  border: 1px solid #000;
 }
 
 .btn.btn-outline {
-  background: #FFF;
+  background: #FFFF;
   color: #000;
 }
 
