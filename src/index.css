@@ -7,7 +7,6 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-
 .App {
   display: flex;
   flex-direction: column;
@@ -21,6 +20,8 @@
   box-shadow: 0px 0px 14px #ddd;
   padding: 1rem;
   border-radius: 8px;
+  background: rgb(2,0,36);
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(129,0,180,1) 0%, rgba(145,33,218,1) 50%, rgba(0,212,255,1) 100%);
 }
 
 .container > .title > h1 {
