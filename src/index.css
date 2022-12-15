@@ -53,6 +53,7 @@ label {
   border-radius: 8px;
   color: #FFF;
   background: #000;
+  border: 0;
 }
 
 .btn.btn-outline {
