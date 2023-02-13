@@ -25,13 +25,13 @@ function App() {
         theme: "light",
       });
     } else {
-      let bmi = (weight / (height * height)) * 703;
-      setBmi(bmi.toFixed(1));
 
+      let bmi = (weight / ((height/100) * (height/100)));//* 703;
+      setBmi(bmi.toFixed(1));
       // Logika menampilkan pesan status 
-      if(bmi < 25) {
+      if(bmi < 18.4) {
         setMsg("berat badan kamu kurang");
-      } else if(bmi >= 25 && bmi < 30) {
+      } else if(bmi >= 18.5 && bmi < 25) {
         setMsg("berat badan kamu normal");
       } else {
         setMsg("kamu kelebihan berat badan");
@@ -66,11 +66,11 @@ function App() {
         </div>
         <form onSubmit={calBmi}>
           <div>
-            <label>Weight (berat)</label>
+            <label>Weight (kg)</label>
             <input value={weight} onChange={(e) => setWeight(e.target.value)} />
           </div>
           <div>
-            <label>Height (Tinggi)</label>
+            <label>Height (cm)</label>
             <input value={height} onChange={(e) => setHeight(e.target.value)} />
           </div>
           <div>
