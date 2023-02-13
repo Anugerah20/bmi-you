@@ -62,16 +62,16 @@ function App() {
     <div className="App">
       <div className="container">
         <div className="title">
-          <h1>Timbanganku</h1>
+          <h1>BMI YOU</h1>
         </div>
         <form onSubmit={calBmi}>
           <div>
-            <label>Weight (berat)</label>
-            <input value={weight} onChange={(e) => setWeight(e.target.value)} />
+            <label>Height (cm)</label>
+            <input value={height} onChange={(e) => setHeight(e.target.value)} />
           </div>
           <div>
-            <label>Height (Tinggi)</label>
-            <input value={height} onChange={(e) => setHeight(e.target.value)} />
+            <label>Weight (kg)</label>
+            <input value={weight} onChange={(e) => setWeight(e.target.value)} />
           </div>
           <div>
             <button className="btn">Submit</button>
