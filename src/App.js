@@ -13,9 +13,6 @@ function App() {
   let calBmi = (event) => {
     event.preventDefault();
 
-    console.log()
-    console.log()
-
     if (weight === 0 || height === 0 || weight === "" || height === "") {
       toast.info("Berat dan Tinggi wajib di isi", {
         position: "top-center",
