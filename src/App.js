@@ -13,8 +13,22 @@ function App() {
   let calBmi = (event) => {
     event.preventDefault();
 
+    console.log()
+    console.log()
+
     if (weight === 0 || height === 0 || weight === "" || height === "") {
       toast.info("Berat dan Tinggi wajib di isi", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else if (isNaN(weight) === true || isNaN(height) === true) { /* It checks if the value of `weight` or `height` is not a number. */
+      toast.warn("Hanya menerima angka!", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
