@@ -45,7 +45,7 @@ function App() {
    * `resetForm` is a function that sets the state of `height`, `weight`, `bmi`, `msg`, and `srcImage` to
    * an empty string, null, and "Masukkan berat dan tinggi kamu!" respectively.
    **/
-  let resetForm = () => {
+  let resetData = () => {
     setHeight("")
     setWeight("")
     setBmi("")
@@ -88,7 +88,7 @@ function App() {
           <ToastContainer />
         </form>
         <div>
-          <button className="btn btn-outline" onClick={() => resetForm()}>
+          <button className="btn btn-outline" onClick={() => resetData()}>
             Reset
           </button>
         </div>
