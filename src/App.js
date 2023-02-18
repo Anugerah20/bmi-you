@@ -5,16 +5,27 @@ import "react-toastify/dist/ReactToastify.css";
 
 function App() {
 
-  const [weight, setWeight] = useState(0);
-  const [height, setHeight] = useState(0);
+  const [weight, setWeight] = useState();
+  const [height, setHeight] = useState();
   const [bmi, setBmi] = useState('');
-  const [msg, setMsg] = useState('data tidak ditemukan!');
+  const [msg, setMsg] = useState('Masukkan berat dan tinggi kamu!');
 
   let calBmi = (event) => {
     event.preventDefault();
 
-    if(weight === 0 || height === 0) {
+    if (weight === 0 || height === 0 || weight === "" || height === "") {
       toast.info("Berat dan Tinggi wajib di isi", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else if (isNaN(weight) === true || isNaN(height) === true) { /* It checks if the value of `weight` or `height` is not a number. */
+      toast.warn("Hanya menerima angka!", {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -29,9 +40,9 @@ function App() {
       setBmi(bmi.toFixed(1));
 
       // Logika menampilkan pesan status 
-      if(bmi < 25) {
+      if (bmi < 25) {
         setMsg("berat badan kamu kurang");
-      } else if(bmi >= 25 && bmi < 30) {
+      } else if (bmi >= 25 && bmi < 30) {
         setMsg("berat badan kamu normal");
       } else {
         setMsg("kamu kelebihan berat badan");
@@ -39,24 +50,35 @@ function App() {
     }
   };
 
-
   let srcImage;
 
-  if(bmi < 1) {
+  /**
+   * `resetForm` is a function that sets the state of `height`, `weight`, `bmi`, `msg`, and `srcImage` to
+   * an empty string, null, and "Masukkan berat dan tinggi kamu!" respectively.
+   **/
+  let resetData = () => {
+    setHeight("")
+    setWeight("")
+    setBmi("")
+    setMsg("Masukkan berat dan tinggi kamu!")
+    srcImage = null
+  }
+
+  if (bmi < 1) {
     srcImage = null;
   } else {
-    if(bmi < 25) {
+    if (bmi < 25) {
       srcImage = require("../src/Assets/underweight.png");
-    } else if(bmi >= 25 && bmi < 30) {
+    } else if (bmi >= 25 && bmi < 30) {
       srcImage = require("../src/Assets/healthy.png");
     } else {
       srcImage = require("../src/Assets/overweight.png");
     }
   }
 
-  let load = () => {
-    window.location.reload();
-  }
+  // let load = () => {
+  //   window.location.reload();
+  // }
 
   return (
     <div className="App">
@@ -73,14 +95,14 @@ function App() {
             <label>Height (Tinggi)</label>
             <input value={height} onChange={(e) => setHeight(e.target.value)} />
           </div>
-          <div>
-            <button className="btn">Submit</button>
-            <ToastContainer/>
-            <button className="btn btn-outline" onClick={load}>
-              Reload
-            </button>
-          </div>
+          <button className="btn">Submit</button>
+          <ToastContainer />
         </form>
+        <div>
+          <button className="btn btn-outline" onClick={() => resetData()}>
+            Reset
+          </button>
+        </div>
 
         <div className="title">
           <h3>bmi kamu itu: {bmi}</h3>
